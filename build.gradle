@@ -1,0 +1,22 @@
+allprojects {
+    apply plugin: 'idea'
+}
+
+subprojects {
+
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+        testImplementation 'org.assertj:assertj-core:3.9.0'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
